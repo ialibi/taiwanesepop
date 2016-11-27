@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}
+    Homepage - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <h1> Hello App!</h1>
+    <p>There are {{number|apnumber }} songs!</p>
+     <p>This is song's name : {{songname}}</p>
+{% endblock content %}
