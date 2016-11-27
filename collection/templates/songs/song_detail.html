@@ -6,16 +6,12 @@
 
 {% block content %}
     {% for song in songs %}
-        <h2>
-            <a href="{% url 'song_detail' slug=song.slug %}">
-                {{ song.name }}
-            </a>
-        </h2>
+        {% if song.name == "Diu-diu-don" %}
+          {{ song.name}}
         <p>{{ song.description }}</p>
+        {% endif %}
     {% endfor %}
 {% endblock content %}
-
-
 
 
     

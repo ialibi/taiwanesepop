@@ -28,5 +28,8 @@ urlpatterns = [
     url(r'^contact/$',
         TemplateView.as_view(template_name='contact.html'), name='contact'),
 
+    url(r'^songs/(?P<slug>[-\w]+)/$', 
+        views.song_detail, name='song_detail'),
+    
     url(r'^admin/', admin.site.urls),
 ]

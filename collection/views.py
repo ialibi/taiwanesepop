@@ -1,11 +1,17 @@
 from django.shortcuts import render
+from collection.models import Song
 
 def index(request):
-	return render(request, 'index.html')
-	#defining variables
-	number=6
-	songname="Happy Christmas!"
-	return render(request, 'index.html',{
-		'number': number,
-		'songname': songname,
+	songs=Song.objects.all()
+	return render(request, 'index.html', {
+		'songs': songs,
 	})
+
+def song_detail(request, slug):
+    # grab the object...
+    song = Song.objects.get(slug=slug)
+
+    # and pass to the template
+    return render(request, 'songs/song_detail.html', {
+        'song': song,
+    })	
