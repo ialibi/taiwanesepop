@@ -43,5 +43,17 @@ def edit_song(request, slug):
     #form=SongForm()
     #return render(request, 'songs/edit_song.html', {
     #	'form': form
-    })	    
+    })	
+
+def browse_by_name(request, initial=None):
+    if initial:
+       songs = Song.objects.filter(
+            name__istartswith=initial).order_by('name')
+    else:
+        songs = Song.objects.all().order_by('name')
+
+    return render(request, 'search/search.html', {
+        'songs': songs,
+        'initial': initial,
+    })    
 
