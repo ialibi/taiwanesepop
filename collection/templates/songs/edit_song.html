@@ -1,21 +1,14 @@
-{%load staticfiles %}
-<!doctype html>
-<html>
-<head>
-    <title>
-          Edit {{ song.name }} - {{ block.super }}
-    </title>
-</head>
+{% extends 'base.html' %}
+{% block title %}
+    Edit {{ song.name }} - {{ block.super }}
+{% endblock title %}
 
-<body>
-    <header>
-      <h1>Edit "{{ song.name }}"</h1>
-        <form role="form" action="" method="post">
-          {% csrf_token %}
-          {{ form.as_p }}
-        <button type="submit">Submit</button>
-       </form>
-    </header>
-</body>   
+{% block content %}
+    <h1>Edit "{{ song.name }}"</h1>
+    <form role="form" action="" method="post">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button type="submit">Submit</button>
+    </form>
+{% endblock content %}
 
-    
