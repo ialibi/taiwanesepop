@@ -1,0 +1,27 @@
+
+{%load staticfiles %}
+<!doctype html>
+<html>
+<head>
+    <title>
+         Homepage
+         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </title>
+</head>
+<body>
+    <header>
+        <h1>Hello Web App</h1>
+       {% for song in songs %}
+        <h2> <a href="{% url 'song_detail' slug=song.slug %}">
+                {{ song.name }}
+            </a>
+        </h2>    
+        <p>{{ song.description }}</p>
+        {% endfor %}
+    </header>
+</body>    
+
+
+
+
+    

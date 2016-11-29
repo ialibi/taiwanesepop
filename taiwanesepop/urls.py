@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 from django.views.generic import TemplateView, RedirectView
 
+#from registration.backends import MyRegistrationView
 from collection import views
 
 urlpatterns = [
@@ -30,6 +31,10 @@ urlpatterns = [
 
     url(r'^songs/(?P<slug>[-\w]+)/$', 
         views.song_detail, name='song_detail'),
+
+    url(r'^songs/(?P<slug>[-\w]+)/edit/$', 
+        views.edit_song, name='edit_song'),
     
+    url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
 ]

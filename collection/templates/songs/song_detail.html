@@ -1,17 +1,21 @@
-{% extends 'base.html' %}
-{% load humanize %}
-{% block title %}
-    Homepage - {{ block.super }}
-{% endblock title %}
+{%load staticfiles %}
+<!doctype html>
+<html>
+<head>
+    <title>
+      {{ song.name }} - {{ block.super }}
+    </title>
+</head>
 
-{% block content %}
-    {% for song in songs %}
-        {% if song.name == "Diu-diu-don" %}
-          {{ song.name}}
+<body>
+    <header>
+        <h1>{{ song.name }}</h1>
         <p>{{ song.description }}</p>
-        {% endif %}
-    {% endfor %}
-{% endblock content %}
+          <a href="{% url 'edit_song' slug=song.slug %}">
+             Edit me!
+          </a>
+    </header>
+</body>
 
 
     
