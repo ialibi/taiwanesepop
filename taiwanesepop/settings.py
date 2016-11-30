@@ -26,7 +26,7 @@ SECRET_KEY = '(sxokay64mx6%tlb9zc)stmp!#0a6mx#_pit8yc4$4+%dyk)@)'
 DEBUG = False
 
 #update before launch!
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
