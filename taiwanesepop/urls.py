@@ -18,8 +18,6 @@ from django.contrib import admin
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 from django.views.generic import TemplateView, RedirectView
 
-
-#from registration.backends import MyRegistrationView
 from collection import views
 
 urlpatterns = [
@@ -33,32 +31,32 @@ urlpatterns = [
     url(r'^songs/$', RedirectView.as_view(pattern_name='browse')),
     url(r'^songs/(?P<slug>[-\w]+)/$', 
         views.song_detail, name='song_detail'),
+
     url(r'^songs/(?P<slug>[-\w]+)/edit/$', 
         views.edit_song, name='edit_song'),
 
     url(r'^browse/$', RedirectView.as_view(pattern_name='browse')),
     url(r'^browse/name/$', 
-        views.browse_by_name, name='browse'),
+         views.browse_by_name, name='browse'),
     url(r'^browse/name/(?P<initial>[-\w]+)/$', 
-        views.browse_by_name, name='browse_by_name'),
-
+         views.browse_by_name, name='browse_by_name'),
+ 
     # password reset urls
     url(r'^accounts/password/reset/$', password_reset, 
-        {'template_name': 'registration/password_reset_form.html'}, 
-        name="password_reset"),
-    url(r'^accounts/password/reset/done/$', 
-        password_reset_done, 
-        {'template_name': 'registration/password_reset_done.html'}, 
-        name="password_reset_done"),
+         {'template_name': 'registration/password_reset_form.html'}, 
+         name="password_reset"),
+     url(r'^accounts/password/reset/done/$', 
+         password_reset_done, 
+         {'template_name': 'registration/password_reset_done.html'}, 
+         name="password_reset_done"),
     url(r'^accounts/password/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
-        password_reset_confirm, 
-        {'template_name': 'registration/password_reset_confirm.html'}, 
-        name="password_reset_confirm"),
+         password_reset_confirm, 
+         {'template_name': 'registration/password_reset_confirm.html'}, 
+         name="password_reset_confirm"),
     url(r'^accounts/password/done/$', password_reset_complete,
-        {'template_name': 'registration/password_reset_complete.html'},
-        name="password_reset_complete"),
+         {'template_name': 'registration/password_reset_complete.html'},
+         name="password_reset_complete"),
 
-    
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
 ]

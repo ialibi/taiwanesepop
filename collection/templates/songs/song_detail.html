@@ -1,16 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}
-    {{ song.name }} - {{ block.super }}
+   {{ song.name }} - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
     <h1>{{ song.name }}</h1>
     <p>{{ song.description }}</p>
-        <p>
-            <a href="{% url 'edit_song' slug=song.slug %}">
+        <a href="{% url 'edit_song' slug=song.slug %}">
                Edit me!
-            </a>
-        </p>
+        </a>
 {% endblock content %}
-
-    

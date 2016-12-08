@@ -2,7 +2,7 @@
 {% block title %}
     Browse - {{ block.super }}
 {% endblock title %}
-
+ 
 {% block content %}
     <h1>
         Browse Songs{% if initial %} Starting with '{{ initial|title }}'{% endif %}
@@ -26,4 +26,4 @@
         <li>Sorry, no results!</li> 
         {% endfor %}
     </ul>
-{% endblock content %}
+{% endblock content %} 

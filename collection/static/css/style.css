@@ -1,8 +1,32 @@
-h1 {
-	color: #FCA205;
+body {
+    background-color: #1E392A;
 }
 
+h1 {
+    color: #3CC47C;
+    text-align: left;
+}
 
-body {
-	color: #FCA205;
+h2 {
+    color: #E9C893;
+    text-align: left;
+}
+
+h2 a {
+    color: #E9C893;
+    text-align: left;
+}
+
+ul a {
+   color: #E9C893;
+}
+
+li {
+   color: #E9C893;
+}
+
+p {
+	color: #3CC47C;
+    font-family: verdana;
+    font-size: 20px;
 }

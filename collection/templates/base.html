@@ -3,16 +3,14 @@
 <html>
 <head>
     <title>
-         {% block title %}My Taiwanese Pop Project{% endblock title %}
+         {% block title %}My Hello Web App Project{% endblock title %}
     </title>
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-     <link rel="stylesheet" href="{% static 'css/style.css' %}" /> 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     {% block header %}{% endblock header %}
 </head>
 <body>
     <header>
-       <h1>Taiwanese Pop</h1>
+        <h1>Taiwanese Pop</h1>
         <nav>
             <ul>
                 <li>
@@ -26,23 +24,24 @@
                 </li>
                 <li>
                     <a href="{% url 'browse' %}">Browse</a>
-                </li>    
+                    </li>  
+                    
                 {% if user.is_authenticated %}
-                <li>
-                    <a href="{% url 'auth_logout' %}">Logout</a>
-                </li>
-                {% else %}
-                <li>
-                    <a href="{% url 'auth_login' %}">Login</a>
-                </li>
-                <li>
-                    <a href="{% url 'registration_register'%}">Register</a>
-                </li>
-                {% endif %}
+                 <li>
+                     <a href="{% url 'auth_logout' %}">Logout</a>
+                 </li>
+                 {% else %}
+                 <li>
+                     <a href="{% url 'auth_login' %}">Login</a>
+                 </li>
+                 <li>
+                     <a href="{% url 'registration_register'%}">Register</a>
+                 </li>
+                 {% endif %}
             </ul>
         </nav>
     </header>
     {% block content %}{% endblock content %}
     {% block footer %}{% endblock footer %}
 </body>
-</html>        
+</html>

@@ -1,20 +1,16 @@
 {% extends 'base.html' %}
-{% block title %}
-    Homepage - {{ block.super }}
+   {% load humanize %}
+   {% block title %}
+     Homepage - {{ block.super }}
 {% endblock title %}
-   
-
+  
 {% block content %}
-    {% for song in songs %}
-        <h2>
-            <a href="{% url 'song_detail' slug=song.slug %}">
-                {{ song.name }}
-            </a>
-        </h2>
-        <p>{{ song.description }}</p>
-    {% endfor %}
-{% endblock content %}
-
-
-
-    
+   {% for song in songs %}
+   <h2>
+      <a href="{% url 'song_detail' slug=song.slug %}">
+         {{ song.name }}
+      </a>   
+   </h2>
+   <p>{{ song.description }}</p>
+   {% endfor %}   
+{% endblock content %}     

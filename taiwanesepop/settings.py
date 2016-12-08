@@ -23,9 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(sxokay64mx6%tlb9zc)stmp!#0a6mx#_pit8yc4$4+%dyk)@)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-#update before launch!
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
@@ -40,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'registration',
+    'registration'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -123,8 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
@@ -136,4 +134,3 @@ EMAIL_USE_TLS = False
 EMAIL_PORT = 1025
 
 LOGIN_REDIRECT_URL = "home"
-
