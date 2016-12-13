@@ -6,7 +6,7 @@ from collection.models import Song
 # set up automated slug creation
 class SongAdmin(admin.ModelAdmin):
     model = Song
-    list_display = ('name', 'description',)
+    list_display = ('name', 'description', 'urllink',)
     prepopulated_fields = {'slug': ('name',)}
 
 # Register your models here.

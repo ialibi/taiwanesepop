@@ -6,7 +6,8 @@
 {% block content %}
     <h3>{{ song.name }}</h3>
     <p>{{ song.description }}</p>
-        <iframe width="854" height="480" src="https://www.youtube.com/embed/yuaXHvrtjDQ" frameborder="0" allowfullscree></iframe>
+    <h4> Version 1 </h4>
+       <iframe width="854" height="480" src="{{ song.urllink }}" frameborder="0" allowfullscreen></iframe>
         <a href="{% url 'edit_song' slug=song.slug %}">
                Edit me!
         </a>
