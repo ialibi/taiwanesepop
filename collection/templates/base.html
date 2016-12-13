@@ -3,15 +3,17 @@
 <html>
 <head>
     <title>
-         {% block title %}My Hello Web App Project{% endblock title %}
+         {% block title %}Taiwanese Pop Music Project{% endblock title %}
     </title>
+    <meta charset="utf-8"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     {% block header %}{% endblock header %}
 </head>
 <body>
-    <header>
-        <h1>Taiwanese Pop</h1>
-        <nav>
+    <div class="container">
+       <div class="nav"> 
+        <h2>Vote your favorite!</h2>
+          <nav>
             <ul>
                 <li>
                     <a href="{% url 'home' %}">Home</a>
@@ -39,9 +41,16 @@
                  </li>
                  {% endif %}
             </ul>
-        </nav>
-    </header>
-    {% block content %}{% endblock content %}
+          </nav>
+        </div>
+
+        <div class="main">
+          <h1>Taiwanese Pop Music</h1>
+          <h2>Vote for Your Favorite!</h2>
+          <p> Vote your favorite version of different singer's for your favorite songs.</p>     
+          {% block content %}{% endblock content %}
+         </div>   
     {% block footer %}{% endblock footer %}
+   </div> 
 </body>
 </html>

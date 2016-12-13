@@ -4,8 +4,9 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>{{ song.name }}</h1>
+    <h3>{{ song.name }}</h3>
     <p>{{ song.description }}</p>
+        <iframe width="854" height="480" src="https://www.youtube.com/embed/yuaXHvrtjDQ" frameborder="0" allowfullscree></iframe>
         <a href="{% url 'edit_song' slug=song.slug %}">
                Edit me!
         </a>

@@ -28,14 +28,13 @@ urlpatterns = [
     url(r'^contact/$',
         TemplateView.as_view(template_name='contact.html'), name='contact'),
 
-    url(r'^songs/$', RedirectView.as_view(pattern_name='browse')),
+    url(r'^songs/$', RedirectView.as_view(pattern_name='browse', permanent=True)), 
     url(r'^songs/(?P<slug>[-\w]+)/$', 
         views.song_detail, name='song_detail'),
-
     url(r'^songs/(?P<slug>[-\w]+)/edit/$', 
         views.edit_song, name='edit_song'),
 
-    url(r'^browse/$', RedirectView.as_view(pattern_name='browse')),
+    url(r'^browse/$', RedirectView.as_view(pattern_name='browse', permanent=True)),
     url(r'^browse/name/$', 
          views.browse_by_name, name='browse'),
     url(r'^browse/name/(?P<initial>[-\w]+)/$', 
